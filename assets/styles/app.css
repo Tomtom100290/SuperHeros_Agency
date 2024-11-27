@@ -1,3 +1,12 @@
 body {
     background-color: skyblue;
 }
+
+.ImageImport {
+    width: 100px;
+    height: 300px;
+}
+
+img {
+    width: 100%;
+}
