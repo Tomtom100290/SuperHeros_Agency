@@ -18,7 +18,7 @@ final class SuperHerosController extends AbstractController
     #[Route(name: 'app_super_heros_index', methods: ['GET'])]
     public function index(SuperHerosRepository $superHerosRepository, VillesRepository $villesRepository): Response
     {
-        dd($villesRepository->findAll());
+        /*$this->$repositdenyAccessUnlessgranted('ROLE_USER');*/
         return $this->render('super_heros/index.html.twig', [
             'super_heros' => $superHerosRepository->findAll(),
         ]);
