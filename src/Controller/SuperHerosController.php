@@ -18,6 +18,7 @@ final class SuperHerosController extends AbstractController
     #[Route(name: 'app_super_heros_index', methods: ['GET'])]
     public function index(SuperHerosRepository $superHerosRepository, VillesRepository $villesRepository): Response
     {
+
         /*$this->$repositdenyAccessUnlessgranted('ROLE_USER');*/
         return $this->render('super_heros/index.html.twig', [
             'super_heros' => $superHerosRepository->findAll(),
@@ -56,6 +57,7 @@ final class SuperHerosController extends AbstractController
     public function edit(Request $request, SuperHeros $superHero, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SuperHerosType::class, $superHero);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

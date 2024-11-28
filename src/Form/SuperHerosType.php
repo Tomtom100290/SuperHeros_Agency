@@ -28,6 +28,7 @@ class SuperHerosType extends AbstractType
             ->add('createdAt', null, [
                 'widget' => 'single_text',
             ])
+
         ;
     }
 

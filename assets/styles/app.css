@@ -1,5 +1,5 @@
 body {
-    background-color: skyblue;
+    background-color: rgb(188, 188, 202);
 }
 
 .ImageImport {
@@ -9,4 +9,124 @@ body {
 
 img {
     width: 100%;
+}
+
+/*---Boutons / Liens----*/
+/* button */
+button a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.bton {
+    margin: 100px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.bton::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+/* EffetGlow */
+.bton::before {
+    content: "";
+    background: linear-gradient(45deg,
+            #FF0000, #FF7300, #FFFB00, #48FF00,
+            #00FFD5, #002BFF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* hover */
+.bton:hover {
+    scale: 1.1;
+}
+
+.bton:hover::before {
+    opacity: 1;
+
+}
+
+.bton:active:after {
+    background: transparent;
+}
+
+.bton:active {
+    color: #000;
+    font-weight: bold;
+}
+
+/*-----Titres------*/
+h1 {
+    text-align: center;
+    margin: 32px 0px;
+}
+
+/*------Tables/Fomulaires---*/
+.table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#blocTable {
+
+    background-color: rgba(73, 75, 90, 0.377);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 9px 11px 0px rgba(255, 255, 255, 0.686) inset,
+        -11px -7px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    padding: 48px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    width: 70%;
+    margin: 0 auto;
 }
