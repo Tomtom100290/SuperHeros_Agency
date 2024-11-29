@@ -17,20 +17,25 @@
 				<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 			{% endblock %}
+			<defer script src="src/jusgage/raphael-2.1.4.min.js"></script>
+			<defer script src="src/justgage/justgage.js"></script>
+
 		{% endblock %}
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
+		<nav class="navbar navbar-expand-lg navbar-light ">
+			<div class="ImageImport logo">
+				<a href="/"><img src="{{ asset('images/LogoShieldAgency.webp') }}"></a>
+			</div>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#">Home
+						<a class="nav-link" href="/">Home
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Super Héros</a>
+						<a class="nav-link" href="/super/heros">Super Héros</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Équipes</a>
@@ -42,23 +47,41 @@
 						<a class="nav-link" href="#">Dashboard</a>
 					</li>
 					<!--<li class="nav-item dropdown">
-																					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																						Dropdown
-																					</a>
-																					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-																						<a class="dropdown-item" href="#">Action</a>
-																						<a class="dropdown-item" href="#">Another action</a>
-																						<div class="dropdown-divider"></div>
-																						<a class="dropdown-item" href="#">Something else here</a>
-																					</div>
-																				</li>-->
+																																																																																																																																																																	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																																																																																																																																																																		Dropdown
+																																																																																																																																																																	</a>
+																																																																																																																																																																	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+																																																																																																																																																																		<a class="dropdown-item" href="#">Action</a>
+																																																																																																																																																																		<a class="dropdown-item" href="#">Another action</a>
+																																																																																																																																																																		<div class="dropdown-divider"></div>
+																																																																																																																																																																		<a class="dropdown-item" href="#">Something else here</a>
+																																																																																																																																																																	</div>
+																																																																																																																																																																</li>-->
 				</ul>
-				<form class="form-inline my-2 my-lg-0" style="display:flex;">
+				<form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+					<button class="bton" type="submit">Rechercher</button>
 				</form>
 			</div>
 		</nav>
+		<div class="HeroBanner">
+			<div class="ImageImport">
+				<img src="{{ asset('images/herobanner.jpg') }}">
+			</div>
+		</div>
+
 		{% block body %}{% endblock %}
+		{% block footer %}
+			<footer></footer>
+		{% endblock %}
+		<script>
+			var g = new JustGage({
+id: "gauge",
+value: 67,
+min: 0,
+max: 100,
+title: "Visitors"
+});
+		</script>
 	</body>
 </html>
