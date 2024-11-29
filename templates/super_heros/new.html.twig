@@ -4,10 +4,13 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Create new SuperHeros</h1>
+	<h1>Intégration d'un équipier</h1>
+	<div id="blocTable">
+		{{ include('super_heros/_form.html.twig') }}
+	</div>
 
-	{{ include('super_heros/_form.html.twig') }}
 
-
-	<a href="{{ path('app_super_heros_index') }}">back to list</a>
+	<button class="bton">
+		<a href="{{ path('app_super_heros_index') }}">retour</a>
+	</button>
 {% endblock %}

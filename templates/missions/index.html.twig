@@ -1,41 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Missions index{% endblock %}
+{% block title %}Missions index
+{% endblock %}
 
 {% block body %}
-    <h1>Missions index</h1>
+	<h1>Nos Missions</h1>
+	<div id="blocTable" class="table-responsive-sm">
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>NomMission</th>
+					<th>DescriptionMission</th>
+					<th>PouvoirsRequis</th>
+					<th>VillesMission</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for mission in missions %}
+					<tr>
+						<td>{{ mission.id }}</td>
+						<td>{{ mission.NomMission }}</td>
+						<td>{{ mission.DescriptionMission }}</td>
+						<td>{{ mission.PouvoirsRequis ? mission.PouvoirsRequis|join(', ') : '' }}</td>
+						<td>{{ mission.VillesMission ? mission.VillesMission|join(', ') : '' }}</td>
+						<td>
+							<a href="{{ path('app_missions_show', {'id': mission.id}) }}">show</a>
+							<a href="{{ path('app_missions_edit', {'id': mission.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">Aucun enregistrement trouvé</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<button class="bton">
+			<a href="{{ path('app_missions_new') }}">Créer une mission</a>
+		</button>
+	</div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>NomMission</th>
-                <th>DescriptionMission</th>
-                <th>PouvoirsRequis</th>
-                <th>VillesMission</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for mission in missions %}
-            <tr>
-                <td>{{ mission.id }}</td>
-                <td>{{ mission.NomMission }}</td>
-                <td>{{ mission.DescriptionMission }}</td>
-                <td>{{ mission.PouvoirsRequis ? mission.PouvoirsRequis|join(', ') : '' }}</td>
-                <td>{{ mission.VillesMission ? mission.VillesMission|join(', ') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_missions_show', {'id': mission.id}) }}">show</a>
-                    <a href="{{ path('app_missions_edit', {'id': mission.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_missions_new') }}">Create new</a>
 {% endblock %}

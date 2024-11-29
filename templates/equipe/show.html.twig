@@ -1,30 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Equipe{% endblock %}
+{% block title %}Equipe
+{% endblock %}
 
 {% block body %}
-    <h1>Equipe</h1>
+	<h1>Equipe</h1>
+	<div id="blocTable" class="table-responsive-sm">
+		<table class="table table-striped table-dark">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ equipe.id }}</td>
+				</tr>
+				<tr>
+					<th>NomEquipe</th>
+					<td>{{ equipe.NomEquipe }}</td>
+				</tr>
+				<tr>
+					<th>LeaderEquipe</th>
+					<td>{{ equipe.LeaderEquipe }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<button class="bton">
+		<a href="{{ path('app_equipe_index') }}">Retour</a>
+	</button>
+	<button class="bton">
+		<a href="{{ path('app_equipe_edit', {'id': equipe.id}) }}">Modifier</a>
+	</button>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ equipe.id }}</td>
-            </tr>
-            <tr>
-                <th>NomEquipe</th>
-                <td>{{ equipe.NomEquipe }}</td>
-            </tr>
-            <tr>
-                <th>LeaderEquipe</th>
-                <td>{{ equipe.LeaderEquipe }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_equipe_index') }}">back to list</a>
-
-    <a href="{{ path('app_equipe_edit', {'id': equipe.id}) }}">edit</a>
-
-    {{ include('equipe/_delete_form.html.twig') }}
+	{{ include('equipe/_delete_form.html.twig') }}
 {% endblock %}

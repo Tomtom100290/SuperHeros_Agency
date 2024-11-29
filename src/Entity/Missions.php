@@ -20,10 +20,10 @@ class Missions
     #[ORM\Column(type: Types::TEXT)]
     private ?string $DescriptionMission = null;
 
-    #[ORM\Column(type: Types::ARRAY)]
+    #[ORM\Column(type: Types::STRING)]
     private array $PouvoirsRequis = [];
 
-    #[ORM\Column(type: Types::ARRAY)]
+    #[ORM\Column(type: Types::STRING)]
     private array $VillesMission = [];
 
     public function getId(): ?int
@@ -55,24 +55,24 @@ class Missions
         return $this;
     }
 
-    public function getPouvoirsRequis(): array
+    public function getPouvoirsRequis(): string
     {
         return $this->PouvoirsRequis;
     }
 
-    public function setPouvoirsRequis(array $PouvoirsRequis): static
+    public function setPouvoirsRequis(string $PouvoirsRequis): static
     {
         $this->PouvoirsRequis = $PouvoirsRequis;
 
         return $this;
     }
 
-    public function getVillesMission(): array
+    public function getVillesMission(): string
     {
         return $this->VillesMission;
     }
 
-    public function setVillesMission(array $VillesMission): static
+    public function setVillesMission(string $VillesMission): static
     {
         $this->VillesMission = $VillesMission;
 

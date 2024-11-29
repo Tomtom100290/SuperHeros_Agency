@@ -16,7 +16,7 @@ class MissionsType extends AbstractType
             ->add('NomMission')
             ->add('DescriptionMission')
             ->add('PouvoirsRequis')
-            ->add('VillesMission', EntityType)
+            ->add('VillesMission')
         ;
     }
 

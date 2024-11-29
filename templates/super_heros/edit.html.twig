@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit SuperHeros{% endblock %}
+{% block title %}Edit SuperHeros
+{% endblock %}
 
 {% block body %}
-    <h1>Edit SuperHeros</h1>
+	<h1>Upgrade du SuperHeros</h1>
 
-    {{ include('super_heros/_form.html.twig', {'button_label': 'Update'}) }}
+	{{ include('super_heros/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_super_heros_index') }}">back to list</a>
+	<a href="{{ path('app_super_heros_index') }}">Retour</a>
 
-    {{ include('super_heros/_delete_form.html.twig') }}
+	{{ include('super_heros/_delete_form.html.twig') }}
 {% endblock %}

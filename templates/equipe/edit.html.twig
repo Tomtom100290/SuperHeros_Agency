@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Equipe{% endblock %}
+{% block title %}Edit Equipe
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Equipe</h1>
+	<h1>Edit Equipe</h1>
+	<div id="blocTable">
+		{{ include('equipe/_form.html.twig', {'button_label': 'Update'}) }}
+	</div>
+	<button class="bton">
+		<a href="/equipe">Retour</a>
+	</button>
 
-    {{ include('equipe/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_equipe_index') }}">back to list</a>
-
-    {{ include('equipe/_delete_form.html.twig') }}
+	{{ include('equipe/_delete_form.html.twig') }}
 {% endblock %}

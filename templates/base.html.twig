@@ -17,8 +17,8 @@
 				<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 			{% endblock %}
-			<defer script src="src/jusgage/raphael-2.1.4.min.js"></script>
-			<defer script src="src/justgage/justgage.js"></script>
+			<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 		{% endblock %}
 	</head>
@@ -35,28 +35,28 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/super/heros">Super Héros</a>
+						<a class="nav-link" href="/super/heros">Héros</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Équipes</a>
+						<a class="nav-link" href="/equipe">Équipes</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Missions</a>
+						<a class="nav-link" href="/missions">Missions</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Dashboard</a>
 					</li>
 					<!--<li class="nav-item dropdown">
-																																																																																																																																																																	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																																																																																																																																																																		Dropdown
-																																																																																																																																																																	</a>
-																																																																																																																																																																	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-																																																																																																																																																																		<a class="dropdown-item" href="#">Action</a>
-																																																																																																																																																																		<a class="dropdown-item" href="#">Another action</a>
-																																																																																																																																																																		<div class="dropdown-divider"></div>
-																																																																																																																																																																		<a class="dropdown-item" href="#">Something else here</a>
-																																																																																																																																																																	</div>
-																																																																																																																																																																</li>-->
+																																																																																																																																																																																																														<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																																																																																																																																																																																																															Dropdown
+																																																																																																																																																																																																														</a>
+																																																																																																																																																																																																														<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+																																																																																																																																																																																																															<a class="dropdown-item" href="#">Action</a>
+																																																																																																																																																																																																															<a class="dropdown-item" href="#">Another action</a>
+																																																																																																																																																																																																															<div class="dropdown-divider"></div>
+																																																																																																																																																																																																															<a class="dropdown-item" href="#">Something else here</a>
+																																																																																																																																																																																																														</div>
+																																																																																																																																																																																																													</li>-->
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
@@ -72,16 +72,18 @@
 
 		{% block body %}{% endblock %}
 		{% block footer %}
-			<footer></footer>
-		{% endblock %}
-		<script>
-			var g = new JustGage({
-id: "gauge",
-value: 67,
-min: 0,
-max: 100,
-title: "Visitors"
-});
-		</script>
+			<footer>
+				<div class="liens">
+					<div>
+						<div></div>
+						<div class="ImageImport logo">
+							<a href="/"><img src="{{ asset('images/LogoShieldAgency.webp') }}"></a>
+						</div>
+
+					</footer>
+				{% endblock %}
+
+			</body>
+		</html>
 	</body>
 </html>
