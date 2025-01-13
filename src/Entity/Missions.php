@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\MissionsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use PHPUnit\TextUI\XmlConfiguration\Logging\Text;
 
 #[ORM\Entity(repositoryClass: MissionsRepository::class)]
 class Missions
@@ -55,7 +56,7 @@ class Missions
         return $this;
     }
 
-    public function getPouvoirsRequis(): string
+    public function getPouvoirsRequis(): Text
     {
         return $this->PouvoirsRequis;
     }
@@ -67,7 +68,7 @@ class Missions
         return $this;
     }
 
-    public function getVillesMission(): string
+    public function getVillesMission(): array
     {
         return $this->VillesMission;
     }

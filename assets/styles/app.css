@@ -1,5 +1,6 @@
 body {
     background-color: rgb(58, 58, 61);
+
 }
 
 .ImageImport {
@@ -29,6 +30,10 @@ img {
 .BlocHome h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 80px;
+}
+
+h1 {
+    text-align: center;
 }
 
 /*-------NAV--*/
